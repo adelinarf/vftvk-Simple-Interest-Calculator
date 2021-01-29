@@ -15,7 +15,11 @@ function compute()
     var currentyear = new Date().getFullYear();
     var result = document.getElementById("result");
     var futureyear = currentyear + Number(years);
-    document.getElementById("result").innerHTML = `If you deposit ${principal}, at an interest rate of ${rate}%. You will receive an amount of ${interest} in the year ${futureyear}`;
+    if (principal < 0 || principal==0) {
+        alert("Enter a positive number");
+    } else {
+        document.getElementById("result").innerHTML = `If you deposit ${principal}, at an interest rate of ${rate}%. You will receive an amount of ${interest} in the year ${futureyear}`;
+    }
 }
 function slider_number(val)
 {
