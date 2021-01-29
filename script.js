@@ -1,19 +1,25 @@
-var principal = document.getElementById("principal");
-var rate = document.getElementById("rate");
-var years = document.getElementById("years");
+var principal = document.getElementById("principal").value;
+var rate = document.getElementById("rate").value;
+var years = document.getElementById("years").value;
 var interest = principal * years * rate / 100;
 var currentyear = new Date().getFullYear();
 var result = document.getElementById("result");
+var futureyear2 = (years) + (years);
 
 function compute()
 {
-    p = document.getElementById("principal").value;
-    result.innerHTML = "If you deposit 1000000, at an interest rate of 3.5%. You will receive an amount of 17500 in the year 2025";
-    result.innetHTML = currentyear;
+    var principal = document.getElementById("principal").value;
+    var rate = document.getElementById("rate").value;
+    var years = document.getElementById("years").value;
+    var interest = principal * years * rate / 100;
+    var currentyear = new Date().getFullYear();
+    var result = document.getElementById("result");
+    var futureyear = currentyear + Number(years);
+    document.getElementById("result").innerHTML = `If you deposit ${principal}, at an interest rate of ${rate}%. You will receive an amount of ${interest} in the year ${futureyear}`;
 }
-function slider_number()
+function slider_number(val)
 {
-    rate.value=document.getElementById("span").value;
-    document.getElementById("span").innerHTML=rate.value;
+    document.getElementById("span").innerHTML=val;
+
 }
 
