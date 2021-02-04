@@ -1,27 +1,37 @@
 body {background-color:black; font:Arial;}
+
 h1{color:grey; font:Verdana;}
+
 .maindiv{background-color:white; font:black; 
         width: 300px; padding:20px; border-radius: 25px; 
         align: center; }
-
-div label{
-    display: table-cell;
-    text-align: left;
+/* Every div label is displayed as a cell of the table*/
+div label{display: table-cell;
+        text-align: left;
 }
-div.row input, div.row select{
-  display: table-cell;
+/* The amount, rate and number of years are displayed as a table cell to align
+them to the left of the table */
+div.row input, div.row select{display: table-cell;}
+/* The div is displayed as a row of the table, and as every input is inside of a div
+every one of them is a row in the table which will align to the left */
+div.row{display:table-row;
+        width:300px;
+        margin: auto;
 }
-div.row{
-    display:table-row;
-    width:300px;
-}
+/* The rate slider is set to an specific size to prevent the span number from switch*/
 #rate{width:100px;}
-button {display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;}
 
+/*----  The following code is for the button and the interest result, 
+if it's deleted, the button and the result will align to the left like the input fields  ----*/
+
+/* The button is aligned to the center of the div*/
+button {display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;}
+/* The result is set to an specific place in the screen */
 #result{display: block;
-    margin-left: 30px;
-    width: 300px;
-    text-align: left;}
+        margin-left: 30px;
+        width: 300px;
+        text-align: left;}
+        
