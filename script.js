@@ -4,25 +4,30 @@ function compute()
     var rate = document.getElementById("rate").value;
     var years = document.getElementById("numberofyears").value;
     var interest = principal * years * rate / 100;
-    var currentyear = new Date().getFullYear();
+    var currentyear = new Date().getFullYear();   // Th
     var result = document.getElementById("result");
     var futureyear = currentyear + Number(years);
+    /* The variable principal, rate and years get the value input by the user from
+    the DOM tree to be used to the calculation of the future year and the interest    
+    */
     if (principal == "") {
         alert("Please fill field")
-        document.getElementById("principal").focus();
+        document.getElementById("principal").focus();   
+        // When the user doesn't input any amount it sets an alert and focus on the amount input field 
         return false;
     } else if(principal < 0 || principal==0) {
         alert("Enter a positive number");
         document.getElementById("principal").focus();
+        // If the user insert 0 or a number below it, this sets an alert and focus on the amount input field 
         return false;
     } else {
-        document.getElementById("result").innerHTML = `If you deposit ${principal},<br> at an interest rate of ${rate}%.<br> You will receive an amount of ${interest}<br> in the year ${futureyear}`;
+        // If the user inputs a correct amount, the function outputs this message with the calculations done before
+        document.getElementById("result").innerHTML = `If you deposit <mark> ${principal}</mark>,<br> at an interest rate of <mark> ${rate}%</mark>.<br> You will receive an amount of <mark> ${interest}</mark><br> in the year <mark> ${futureyear}</mark>`;
     }
 
 }
 function slider_number(val)
 {
-    document.getElementById("span").innerHTML=val+"%";
-
+    document.getElementById("span").innerHTML=val+"%"; // When the user slides the rate slider, it changes the span value dinamically 
 }
 
