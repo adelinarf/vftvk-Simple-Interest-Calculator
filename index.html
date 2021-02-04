@@ -8,27 +8,36 @@
     <body>
         <div class="maindiv">
             <h1>Simple Interest Calculator</h1>
-            <div class="row"><label> Amount </label> <input type="number"  id="principal"></div> 
-            <div class="row"><label> Rate </label> <input type="range" id="rate" min=1 max=20 step=0.25 value=10.25 onchange="slider_number(this.value)">
-            <span id="span">10.25%</span></div>
+            <! -- All the input fields are inside a div to be able to use the display table
+            in CSS which allow us to align all the inputs and labels associated with them a table like structure
+            -->
+            <div class="row">   
+                <label> Amount </label> <input type="number"  id="principal"></div> 
             <div class="row">
-            <label>  No. of Years </label>
-            <select id = "numberofyears">  
-            <option> - </option>  
-            <option> 1 </option>  
-            <option> 2 </option>  
-            <option> 3 </option>  
-            <option> 4 </option>
-            <option> 5 </option>  
-            <option> 6 </option>  
-            <option> 7 </option>  
-            <option> 8 </option>  
-            <option> 9 </option>
-            <option> 10 </option>     
-            </select>  
-        </div>
+                <label> Rate </label> <input type="range" id="rate" min=1 max=20 step=0.25 value=10.25 onchange="slider_number(this.value)">
+                <span id="span">10.25%</span></div>
+                <! -- Everytime the user moves the slider, the span value changes dynamically -->
+            <div class="row">
+                <label>  No. of Years </label> <! -- The years can be selected using the select attribute instead of a numeric field -->
+                <select id = "numberofyears">  
+                <option> - </option>  
+                <option> 1 </option>  
+                <option> 2 </option>  
+                <option> 3 </option>  
+                <option> 4 </option>
+                <option> 5 </option>  
+                <option> 6 </option>  
+                <option> 7 </option>  
+                <option> 8 </option>  
+                <option> 9 </option>
+                <option> 10 </option>     
+                </select>  
+            </div>
             <br>
             <button onclick="compute()">Compute Interest</button>
+            <! -- When the user clicks on the button, the compute function gives 
+            an output with the interest value according to the given input, 
+            and said value is placed as the following span value-->
             <br>
             <span id="result"></span>
             </br>
