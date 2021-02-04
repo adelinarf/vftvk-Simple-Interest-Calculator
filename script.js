@@ -10,15 +10,10 @@ function compute()
     /* The variable principal, rate and years get the value input by the user from
     the DOM tree to be used to the calculation of the future year and the interest    
     */
-    if (principal == "") {
-        alert("Please fill field")
-        document.getElementById("principal").focus();   
-        // When the user doesn't input any amount it sets an alert and focus on the amount input field 
-        return false;
-    } else if(principal < 0 || principal==0) {
+    if (principal < 0 || principal==0 || principal == "") {
         alert("Enter a positive number");
         document.getElementById("principal").focus();
-        // If the user insert 0 or a number below it, this sets an alert and focus on the amount input field 
+        // If the user insert 0, a negative number or any number, this sets an alert and focus on the amount input field 
         return false;
     } else {
         // If the user inputs a correct amount, the function outputs this message with the calculations done before
